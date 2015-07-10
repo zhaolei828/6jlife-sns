@@ -940,7 +940,6 @@ function fetch($templateFile='',$tvar=array(),$charset='utf-8',$contentType='tex
     //注入全局变量ts
     global  $ts;
     $tvar['ts'] = $ts;
-    unset($tvar['templateCacheFile'],$tvar['templateFile']);
     //$GLOBALS['_viewStartTime'] = microtime(TRUE);
 
     if(null===$templateFile)
@@ -980,6 +979,7 @@ function fetch($templateFile='',$tvar=array(),$charset='utf-8',$contentType='tex
     //载入模版缓存
     if(!$ts['_debug'] && file_exists($templateCacheFile)) {
     //if(1==2){ //TODO  开发
+        unset($tvar['templateCacheFile']);
         extract($tvar, EXTR_OVERWRITE);
 
         //载入模版缓存文件

@@ -143,6 +143,12 @@ return array (
     ),
     'welcome_email' => '0',
   ),
+  'attachimage' => 
+  array (
+    'attach_max_size' => '1',
+    'attach_allow_extension' => 'jpeg,jpg,gif,png',
+    'auto_thumb' => '0',
+  ),
   'site' => 
   array (
     'site_closed' => '1',
@@ -159,16 +165,10 @@ return array (
     'sys_nickname' => '管理员,超级管理员',
     'sys_email' => 'thinksns@zhishisoft.com',
     'home_page' => '0',
-    'sys_version' => '20130523',
+    'sys_version' => '2013110801',
     'site_online_count' => '1',
     'site_rewrite_on' => '0',
     'site_analytics_code' => '',
-  ),
-  'attachimage' => 
-  array (
-    'attach_max_size' => '1',
-    'attach_allow_extension' => 'jpeg,jpg,gif,png',
-    'auto_thumb' => '0',
   ),
 );
 ?>

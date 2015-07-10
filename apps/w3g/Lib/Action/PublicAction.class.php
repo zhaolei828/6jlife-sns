@@ -30,7 +30,7 @@ class PublicAction extends Action {
 
 	//刷新操作
 	public function jump(){
-		$url = t($_GET['url']);
+		$url = $_GET['url'];
 		$this->redirect($url);
 	}
 
@@ -153,8 +153,8 @@ class PublicAction extends Action {
 	}
 
 	public function register() {
-	    // if (!$this->isRegisterOpen())
-	        // redirect(U('/Public/login'), 3, '站点未开放注册');
+	    if (!$this->isRegisterOpen())
+	        redirect(U('/Public/login'), 3, '站点未开放注册');
 
 	    // $this->assign($_GET);
 	    $this->display();

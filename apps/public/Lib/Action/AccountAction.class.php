@@ -136,7 +136,6 @@ class AccountAction extends Action
 		// 保存用户资料配置字段
 		(false !== $res) && $res = $this->_profile_model->saveUserProfile($this->mid, $_POST);
 		// 保存用户标签信息
-		if(isset($_REQUEST['user_tags'])){
 		$tagIds = t($_REQUEST['user_tags']);
 		!empty($tagIds) && $tagIds = explode(',', $tagIds);
 		$rowId = intval($this->mid);
@@ -147,11 +146,8 @@ class AccountAction extends Action
 			}
 			model('Tag')->setAppName('public')->setAppTable('user')->updateTagData($rowId, $tagIds);
 		}
-		}
-		if(!$res){
+		$result = $this->ajaxReturn(null, $this->_profile_model->getError(), $res);
 		return $this->ajaxReturn(null, $this->_profile_model->getError(), $res);
-		}
-		return $this->ajaxReturn(null, '操作成功', $res);
 	}
 
 	/**
@@ -402,7 +398,7 @@ class AccountAction extends Action
 			  $a = explode('|', $verifyInfo['attach_id']);
 			  foreach($a as $key=>$val){
 			  	if($val !== "") {
-			  		$attachInfo = D('attach')->where("attach_id=".intval($a[$key]))->find();
+			  		$attachInfo = D('attach')->where("attach_id=$a[$key]")->find();
 			  		$verifyInfo['attachment'] .= $attachInfo['name'].'&nbsp;<a href="'.getImageUrl($attachInfo['save_path'].$attachInfo['save_name']).'" target="_blank">下载</a><br />';
 			  	}
 			  }
