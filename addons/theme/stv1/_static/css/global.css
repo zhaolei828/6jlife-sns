@@ -1375,7 +1375,7 @@ a.btn-account:hover{background-position:-164px 0;}
 
 /*开放式登录*/
 .logo-bg{height:80px;width:100%;}
-.logo-bg .logo a{display:inline-block;width:138px;height:31px;overflow:hidden;margin:0 20px 0 0;padding:24px 0 0 0;float:left;}
+.logo-bg .logo a{display:inline-block;width:138px;overflow:hidden;margin:0 20px 0 0;padding:24px 0 0 0;float:left;}
 .logo-bg .logo span{font-size:18px;font-family:"微软雅黑";padding:30px 0 0 0;display:inline-block;}
 .logo-bg .logo{width:960px;height:80px;margin:0 auto;}
 .login-c{padding:0 0 30px 0;background:#fff;width:960px;margin:0 auto;box-shadow:0 0 5px #ccc;-moz-box-shadow:0 0 5px #ccc;-webkit-box-shadow:0 0 5px #ccc;}
